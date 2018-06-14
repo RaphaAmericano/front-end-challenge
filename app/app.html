@@ -3,22 +3,74 @@
     <meta charset="utf-8">
     <title>Front End Challenge</title>
     
-    <script src="../node_modules/angular/angular.js"></script>
+    
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,500" rel="stylesheet">
   </head>
-  <body>
-
+<body>
     <div class="container">
         <header>
-            <nav>
-                <a href="https://www.last.fm">
-                    <img src="" alt="" class="logo">
-                </a>
-                <form action=""><input type="text">
-                </form>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://www.last.fm">
+                            <img src="../img/logo_spotfm.png" alt="" class="logo">
+                        </a>
+                    </div>
+                    <div class="nav navbar-nav navbar-form navbar-right">
+                        <form action="" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control text-uppercase" placeholder="Busque por um artista">
+                        <form>
+                    </div>
+                </div>
             </nav>
         </header>
-
     </div>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <div class="jumbotron text-center">
+                        <h1 class="text-uppercase">Bem Vindo ao spot.fm</h1>
+                        <p>Reunimos todos os seus serviços musicais preferidos e nos juntamos a eles, ouvindo, assistindo e compartilhando para conectar o seu mundo musical.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h2 class="text-uppercase text-center">Artistas mais escutados</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h2 class="text-uppercase text-center"><span>Musicas</span> mais Escutadas</h2>
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <p>&copy; {{ date | date:'yyyy'}} SPOT.fm Ltd. Todos os direitos reservados</p>
+                    </div>
+                    <div class="nav navbar-nav navbar-form navbar-right">
+                        <a class="navbar-brand" href="https://www.last.fm">
+                            <img src="../img/logo_spotfm.png" alt="" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        <script src="../node_modules/angular/angular.js"></script>
+    </footer> 
   </body>
 </html>
