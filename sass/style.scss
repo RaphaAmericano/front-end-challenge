@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,500');
+@import 'variables';
+@import 'placeholders';
+@import 'mixins';
+
+* {
+    font-family: $fira_sans;
+}
+.section_title{
+        color: $cinza;
+        margin: 50px 0;
+        max-height: 196px;
+        span {
+            color: $vermelho;
+        }
+}
+
+header, footer {
+    .navbar-brand{
+        .logo{
+            height: 30px;
+        }
+    }
+}
+header {
+   .navbar-default {
+    background: transparent;
+    border-color: transparent;
+    margin-bottom: 0;
+   }
+   .navbar-right{
+        form{
+            input.form-control{
+                @include borders(2px, 2px, 2px, 0, $vermelho);
+                color: $vermelho;  
+                border-radius: 0 20px 20px 0;
+                &:focus{
+                    background-color: transparent;
+                    box-shadow: none;
+                } 
+                @include placeholder($vermelho);
+            }
+        }
+        .input-group-addon{
+            @include borders(2px, 0, 2px, 2px, $vermelho);
+            border-radius: 20px 0 0 20px;
+            background: transparent;
+            color: $vermelho;
+            font-size: 16px;
+        }
+   }
+}
+
+.section_1 {
+    @extend %background_image_cover;
+    max-height: 692px;
+    background-image: url(../img/bg_hero.jpg);
+    .jumbotron {
+        color: $branco;
+        margin: 210px 0;
+        background: transparent;
+    }
+}
+
+.section_2 {
+    .col-md-6, .col-md-4 {
+        padding: 0;
+    }
+    .row:nth-child(2){
+        padding: 0 15px;
+    }
+    .panel {
+        border:none;
+        background-color: transparent;
+        border-color: transparent;
+        margin-bottom: 0;
+        padding-top: 150px;
+        .panel-body{
+            padding: 0 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        h2, h3 {
+            color: $branco;
+        }
+        h2 {
+            font-weight: 500;
+        }
+        h3 {
+            font-weight: 300;
+        }
+    }
+}

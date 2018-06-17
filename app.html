@@ -5,10 +5,10 @@
     
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,500" rel="stylesheet">
+    
   </head>
 <body ng-app="mainApp" ng-controller="mainController">
-    <div class="container">
+    <div class="container-fluid">
         <header>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -27,7 +27,7 @@
             </nav>
         </header>
     </div>
-    <div class="container">
+    <div class="container-fluid section_1">
         <div class="row">
             <div class="col-md-12">
                     <div class="jumbotron text-center">
@@ -37,29 +37,59 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid section_2">
         <div class="row">
             <div class="col-md-12">
-                    <h2 class="text-uppercase text-center">Artistas mais escutados</h2>
+                    <h2 class="text-uppercase text-center section_title"><span>Artistas</span> mais escutados</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12" ng-repeat="artista in topbandas.data.artists.artist">
-                    <h2>{{ artista.name }}</h2>
-                    <h3>{{ artista.listeners }}</h3>
-                <img src="{{ artista.image[2]['#text'] }}" alt="">
-
+            <div 
+                ng-repeat="artista in topbandas" 
+                ng-class="$index < 2 ? 'col-md-6': 'col-md-4'" 
+                ng-style="{
+                            'background-image': 'url('+ artista.image[3]['#text'] +')',
+                            'background-position': 'center center',
+                            'backgroun-repeat': no-repeat, 
+                            'background-size': 'cover'}">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h2>{{ artista.name }}</h2>
+                        <h3>{{ artista.listeners }} ouvintes</h3>
+                    </div>
+                </div>  
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                    <h2 class="text-uppercase text-center"><span>Musicas</span> mais Escutadas</h2>
+                    <h2 class="text-uppercase text-center section_title"><span>Musicas</span> mais Escutadas</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="musica in topmusicas">
+                <img src="{{ musica.image[1]['#text'] }}" alt="">
+                <h2>{{ musica.name }}</h2>
+                <h3>{{ musica.artist.name }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+            </div>
+            <div class="col-md-12">
+                <a href="#" ng-click="atualizarTopMusicas(1)">1</a>
+                <a href="#" ng-click="atualizarTopMusicas(2)">2</a>
+                <a href="#" ng-click="atualizarTopMusicas(3)">3<a/>
             </div>
         </div>
     </div>
-    <footer class="container" >
+    <footer class="container-fluid" >
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">

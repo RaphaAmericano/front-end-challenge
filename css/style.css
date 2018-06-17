@@ -1,3 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:300,500");
+.section_1 {
+  background-origin: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 * {
-    font-family: 'Fira Sans', sans-serif;
-}
+  font-family: "Fira Sans", sans-serif; }
+
+.section_title {
+  color: #2f2f2f;
+  margin: 50px 0;
+  max-height: 196px; }
+  .section_title span {
+    color: #d51007; }
+
+header .navbar-brand .logo, footer .navbar-brand .logo {
+  height: 30px; }
+
+header .navbar-default {
+  background: transparent;
+  border-color: transparent;
+  margin-bottom: 0; }
+
+header .navbar-right form input.form-control {
+  border-top: 2px solid #d51007;
+  border-right: 2px solid #d51007;
+  border-bottom: 2px solid #d51007;
+  border-left: 0 solid #d51007;
+  color: #d51007;
+  border-radius: 0 20px 20px 0; }
+  header .navbar-right form input.form-control:focus {
+    background-color: transparent;
+    box-shadow: none; }
+  header .navbar-right form input.form-control::-webkit-input-placeholder {
+    font-weight: 500;
+    color: #d51007; }
+  header .navbar-right form input.form-control:-moz-placeholder {
+    font-weight: 500;
+    color: #d51007; }
+  header .navbar-right form input.form-control::-moz-placeholder {
+    font-weight: 500;
+    color: #d51007; }
+  header .navbar-right form input.form-control:-ms-input-placeholder {
+    font-weight: 500;
+    color: #d51007; }
+
+header .navbar-right .input-group-addon {
+  border-top: 2px solid #d51007;
+  border-right: 0 solid #d51007;
+  border-bottom: 2px solid #d51007;
+  border-left: 2px solid #d51007;
+  border-radius: 20px 0 0 20px;
+  background: transparent;
+  color: #d51007;
+  font-size: 16px; }
+
+.section_1 {
+  max-height: 692px;
+  background-image: url(../img/bg_hero.jpg); }
+  .section_1 .jumbotron {
+    color: #FFF;
+    margin: 210px 0;
+    background: transparent; }
+
+.section_2 .col-md-6, .section_2 .col-md-4 {
+  padding: 0; }
+
+.section_2 .row:nth-child(2) {
+  padding: 0 15px; }
+
+.section_2 .panel {
+  border: none;
+  background-color: transparent;
+  border-color: transparent;
+  margin-bottom: 0;
+  padding-top: 150px; }
+  .section_2 .panel .panel-body {
+    padding: 0 15px;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .section_2 .panel h2, .section_2 .panel h3 {
+    color: #FFF; }
+  .section_2 .panel h2 {
+    font-weight: 500; }
+  .section_2 .panel h3 {
+    font-weight: 300; }

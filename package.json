@@ -18,6 +18,11 @@
   "homepage": "https://github.com/RaphaAmericano/front-end-challenge#readme",
   "dependencies": {
     "angular": "^1.6.10",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp-sass": "^4.0.1"
   }
 }

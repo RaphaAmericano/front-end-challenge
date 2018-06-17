@@ -1,0 +1,20 @@
+@mixin borders($top, $right, $bottom, $left, $color:$cinza){
+    border-top: $top solid $color;
+    border-right: $right solid $color;
+    border-bottom: $bottom solid $color;
+    border-left: $left solid $color;
+}
+@mixin placeholder($cor){
+    &::-webkit-input-placeholder {
+        font-weight: 500;
+        color: $cor}
+    &:-moz-placeholder           {
+        font-weight: 500;
+        color: $cor}
+    &::-moz-placeholder          {
+        font-weight: 500;
+        color: $cor}
+    &:-ms-input-placeholder      {
+        font-weight: 500;
+        color: $cor} 
+}
