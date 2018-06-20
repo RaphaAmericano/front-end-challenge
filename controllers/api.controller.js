@@ -14,6 +14,8 @@ angular.module("mainApp", []).service('buscaArtista', ['$http', function($http){
         $scope.topbandas = [];
         $scope.topmusicas = [];
         $scope.dados = [];
+        $scope.busca = "";
+        $scope.resultado = [];
 
         var apiKey = '&api_key=b80de9cb1cfe2782055d664a50ab903a&format=json';
         var apiUrl = 'http://ws.audioscrobbler.com/2.0/';
@@ -34,6 +36,13 @@ angular.module("mainApp", []).service('buscaArtista', ['$http', function($http){
             $http.get(apiUrl+"?method=chart.gettoptracks&page="+pagina+"&limit=3"+apiKey).then(function(data, status){
                 $scope.topmusicas = data.data.tracks.track;
                 console.log($scope.topmusicas);
+            });
+        };
+
+        $scope.buscarArtista = function(palavra){
+            $http.get(apiUrl+"?method=artist.search&artist="+palavra+apiKey).then(function(data, status){
+                $scope.resultado = data.data.results.artistmatches.artist;
+                console.log(data.data.results.artistmatches.artist);
             });
         };
 
