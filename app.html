@@ -8,7 +8,7 @@
     
   </head>
 <body ng-app="mainApp" ng-controller="mainController">
-    <div class="container-fluid">
+    <div class="container-fluid" ng-mouseleave="limparBusca()">
         <header>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -20,27 +20,28 @@
                     <div class="nav navbar-nav navbar-form navbar-right">
                         <form action="" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control text-uppercase" placeholder="Busque por um artista" ng-model="busca" ng-change="buscarArtista(busca)" >
+                            <input type="text" class="form-control text-uppercase" placeholder="Busque por um artista" ng-model="busca" ng-change="buscarArtista(busca)" ng-mouseenter="buscarArtista(busca)">
                         <form>
                     </div>
                 </div>
             </nav>
+            <ul class="media-list" ng-show="resultado">
+                <li class="media" ng-repeat="artist in resultado | limitTo: 5 ">
+                    <div class="media-left">
+                        <a href="{{ artist.url}}">
+                        <img class="media-object" src="{{ artist.image[0]['#text']}}" alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{artist.name}}</h4>
+                        <p></p>
+                    </div>
+                </li>
+            </ul>
         </header>
     </div>
     <div class="container-fluid" ng-if="resultado">
-        <ul class="media-list">
-            <li class="media" ng-repeat="artist in resultado | limitTo: 5 ">
-                <div class="media-left">
-                    <a href="{{ artist.url}}">
-                    <img class="media-object" src="{{ artist.image[0]['#text']}}" alt="...">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">{{artist.name}}</h4>
-                    <p></p>
-                </div>
-            </li>
-        </ul>
+        
     </div>
     <div class="container-fluid section_1">
         <div class="row">
@@ -104,6 +105,7 @@
             </div>
         </div>
     </div>
+    <div ng-view=""></div>
     <footer class="container-fluid" >
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -118,7 +120,8 @@
                 </div>
             </nav>
         <script src="node_modules/angular/angular.js"></script>
-        <script src="modules/app.module.js"></script>
+        <script src="app.js"></script>
+        <!-- <script src="modules/app.module.js"></script> -->
         <script src="controllers/api.controller.js"></script>
         <!-- <script src="services/api.service.js"></script> -->
     </footer> 
