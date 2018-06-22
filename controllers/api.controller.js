@@ -1,24 +1,13 @@
-var app = angular.module("mainApp", []);
 
-// app.service('buscaArtista', ['$http', function($http){      
-//     return {
-//         search: function(keywords){
-//             return $http.get('http://ws.audioscrobbler.com/2.0/?method=artist.search&artist='+keywords+'&api_key=b80de9cb1cfe2782055d664a50ab903a&format=json')
-//             .then(function(data, status){
-//                 //mudar para listar os artistas
-//                 //$scope.topbandas = data.data.artists.artist;
-//                 console.log(data);
-//             });
-//         }
-//     }
-// }]);
-app.controller("mainController", function($scope, $http){
+
+angular.module("mainApp").controller("mainController", function($scope, $http){
         $scope.date = new Date();
         $scope.topbandas = [];
         $scope.topmusicas = [];
         $scope.dados = [];
         $scope.busca = "";
         $scope.resultado = [];
+        $scope.artista = [];
 
         var apiKey = '&api_key=b80de9cb1cfe2782055d664a50ab903a&format=json';
         var apiUrl = 'http://ws.audioscrobbler.com/2.0/';
@@ -53,19 +42,32 @@ app.controller("mainController", function($scope, $http){
             $scope.resultado = [];
         }
 
-
+        $scope.abrirPagina = function(nome){
+            console.log(nome);
+            $http.get(apiUrl+"?method=artist.getinfo&artist="+nome+apiKey).then(function(data, status){
+                $scope.artista = data;
+                console.log(data);
+            });
+        }
         carregarApi();
 
 });
 
-// app.config(function($routeProvider){
-//     $routeProvider
-//     // .when('/', {
-//     //     templateUrl: 'app.html',
-//     //     controller: 'mainControlle'
-//     // })
-//     .when('/artista', {
-//         templateUrl: 'views/artista.html',
-//         controller: 'mainController'
-//     })
-// });
+angular.module("mainApp").config(['$routeProvider', function($routeProvider){
+    $routeProvider
+    .when('/', {
+        templateUrl: '../views/index.html',
+        controller: 'mainController'
+    })
+    .when('/artista', {
+        templateUrl: '../views/artista.html',
+        controller: 'mainController'
+    })
+    .when('/teste', {
+        template: "<h1>Teste</h1>",
+        controller: 'mainController'
+    })
+    .otherwise({
+        redirectTo: '/'
+    })
+}]);

@@ -8,41 +8,8 @@
     
   </head>
 <body ng-app="mainApp" ng-controller="mainController">
-    <div class="container-fluid" ng-mouseleave="limparBusca()">
-        <header>
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="https://www.last.fm">
-                            <img src="img/logo_spotfm.png" alt="" class="logo">
-                        </a>
-                    </div>
-                    <div class="nav navbar-nav navbar-form navbar-right">
-                        <form action="" class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control text-uppercase" placeholder="Busque por um artista" ng-model="busca" ng-change="buscarArtista(busca)" ng-mouseenter="buscarArtista(busca)">
-                        <form>
-                    </div>
-                </div>
-            </nav>
-            <ul class="media-list" ng-show="resultado">
-                <li class="media" ng-repeat="artist in resultado | limitTo: 5 ">
-                    <div class="media-left">
-                        <a href="{{ artist.url}}">
-                        <img class="media-object" src="{{ artist.image[0]['#text']}}" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{artist.name}}</h4>
-                        <p></p>
-                    </div>
-                </li>
-            </ul>
-        </header>
-    </div>
-    <div class="container-fluid" ng-if="resultado">
+    <app-header></app-header>
         
-    </div>
     <div class="container-fluid section_1">
         <div class="row">
             <div class="col-md-12">
@@ -53,77 +20,15 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid section_2">
-        <div class="row">
-            <div class="col-md-12">
-                    <h2 class="text-uppercase text-center section_title"><span>Artistas</span> mais escutados</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div 
-                ng-repeat="artista in topbandas" 
-                ng-class="$index < 2 ? 'col-md-6': 'col-md-4'" 
-                ng-style="{
-                            'background-image': 'url('+ artista.image[3]['#text'] +')',
-                            'background-position': 'center center',
-                            'backgroun-repeat': no-repeat, 
-                            'background-size': 'cover'}">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h2>{{ artista.name }}</h2>
-                        <h3>{{ artista.listeners }} ouvintes</h3>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                    <h2 class="text-uppercase text-center section_title"><span>Musicas</span> mais Escutadas</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4" ng-repeat="musica in topmusicas">
-                <img src="{{ musica.image[1]['#text'] }}" alt="">
-                <h2>{{ musica.name }}</h2>
-                <h3>{{ musica.artist.name }}</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-            </div>
-            <div class="col-md-12">
-                <a href="#" ng-click="atualizarTopMusicas(1)">1</a>
-                <a href="#" ng-click="atualizarTopMusicas(2)">2</a>
-                <a href="#" ng-click="atualizarTopMusicas(3)">3<a/>
-            </div>
-        </div>
-    </div>
-    <div ng-view=""></div>
-    <footer class="container-fluid" >
-        <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <p>&copy; {{ date | date:'yyyy'}} SPOT.fm Ltd. Todos os direitos reservados</p>
-                    </div>
-                    <div class="nav navbar-nav navbar-form navbar-right">
-                        <a class="navbar-brand" href="https://www.last.fm">
-                            <img src="img/logo_spotfm.png" alt="" class="logo">
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        <script src="node_modules/angular/angular.js"></script>
+    
+    <top-five-artists></top-five-artists>
+    <top-five-musics></top-five-musics>  
+    <app-footer></app-footer>
+    <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
         <script src="app.js"></script>
-        <!-- <script src="modules/app.module.js"></script> -->
+        <script src="modules/app.module.js"></script>
         <script src="controllers/api.controller.js"></script>
         <!-- <script src="services/api.service.js"></script> -->
-    </footer> 
   </body>
 </html>

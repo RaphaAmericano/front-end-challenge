@@ -1,1 +1,1 @@
-var app = angular.module("mainApp", []);
+//angular.module("mainApp", ["ngRoute"]);

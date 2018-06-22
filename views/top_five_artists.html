@@ -1,0 +1,24 @@
+<div class="container-fluid section_2">
+    <div class="row">
+        <div class="col-md-12">
+                <h2 class="text-uppercase text-center section_title"><span>Artistas</span> mais escutados</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div 
+            ng-repeat="artista in topbandas" 
+            ng-class="$index < 2 ? 'col-md-6': 'col-md-4'" 
+            ng-style="{
+                        'background-image': 'url('+ artista.image[3]['#text'] +')',
+                        'background-position': 'center center',
+                        'backgroun-repeat': no-repeat, 
+                        'background-size': 'cover'}">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>{{ artista.name }}</h2>
+                    <h3>{{ artista.listeners }} ouvintes</h3>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
