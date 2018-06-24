@@ -46,29 +46,3 @@ angular.module("mainApp").controller("mainController", function($scope, $http){
         carregarApi();
 
 });
-
-angular.module('mainApp').service('callApi', callApi);
-callApi = function(){
-    console.log("Funcionou");
-    this.teste = function(){
-        console.log("teste");
-    }
-}
-angular.module("mainApp").config(['$routeProvider', function($routeProvider){
-    $routeProvider
-    .when('/', {
-        templateUrl: '../views/index.html',
-        controller: 'mainController'
-    })
-    .when('/artista', {
-        templateUrl: '../views/artista.html',
-        controller: 'mainController'
-    })
-    .when('/teste', {
-        template: "<h1>Teste</h1>",
-        controller: 'mainController'
-    })
-    .otherwise({
-        redirectTo: '/'
-    })
-}]);
