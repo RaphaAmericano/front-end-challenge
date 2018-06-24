@@ -15,11 +15,9 @@ angular.module("mainApp").controller("mainController", function($scope, $http){
         var carregarApi = function(){
             $http.get(apiUrl+"?method=chart.gettopartists&page=1&limit=5"+apiKey).then(function(data, status){
                 $scope.topbandas = data.data.artists.artist;
-                console.log($scope.topbandas);
             });
             $http.get(apiUrl+"?method=chart.gettoptracks&page=1&limit=3"+apiKey).then(function(data, status){
                 $scope.topmusicas = data.data.tracks.track;
-                console.log($scope.topmusicas);
             });
         };
 
@@ -27,14 +25,12 @@ angular.module("mainApp").controller("mainController", function($scope, $http){
             $scope.topmusicas = [];
             $http.get(apiUrl+"?method=chart.gettoptracks&page="+pagina+"&limit=3"+apiKey).then(function(data, status){
                 $scope.topmusicas = data.data.tracks.track;
-                console.log($scope.topmusicas);
             });
         };
 
         $scope.buscarArtista = function(palavra){
             $http.get(apiUrl+"?method=artist.search&artist="+palavra+apiKey).then(function(data, status){
                 $scope.resultado = data.data.results.artistmatches.artist;
-                console.log(data.data.results.artistmatches.artist);
             });
         };
         
@@ -43,16 +39,21 @@ angular.module("mainApp").controller("mainController", function($scope, $http){
         }
 
         $scope.abrirPagina = function(nome){
-            console.log(nome);
             $http.get(apiUrl+"?method=artist.getinfo&artist="+nome+apiKey).then(function(data, status){
                 $scope.artista = data;
-                console.log(data);
             });
         }
         carregarApi();
 
 });
 
+angular.module('mainApp').service('callApi', callApi);
+callApi = function(){
+    console.log("Funcionou");
+    this.teste = function(){
+        console.log("teste");
+    }
+}
 angular.module("mainApp").config(['$routeProvider', function($routeProvider){
     $routeProvider
     .when('/', {
