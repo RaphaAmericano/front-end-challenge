@@ -7,47 +7,40 @@
     <link rel="stylesheet" href="css/style.css">
     
   </head>
-<body ng-app="mainApp" ng-controller="mainController">
+<body ng-app="mainApp">
     <app-header></app-header>
-        
-    <div class="container-fluid section_1">
-        <div class="row">
-            <div class="col-md-12">
-                    <div class="jumbotron text-center">
-                        <h1 class="text-uppercase">Bem Vindo ao spot.fm</h1>
-                        <p>Reunimos todos os seus serviços musicais preferidos e nos juntamos a eles, ouvindo, assistindo e compartilhando para conectar o seu mundo musical.</p>
-                    </div>
-            </div>
-        </div>
-    </div>
-    
+    <app-hero></app-hero>
     <top-artists></top-artists>
     <top-tracks></top-tracks>
     <app-footer></app-footer>
+
     <script src="node_modules/angular/angular.js"></script>
-        <script src="node_modules/angular-route/angular-route.min.js"></script>
-        <script src="app.js"></script>
-        <script src="modules/app.module.js"></script>
-        <script src="controllers/api.controller.js"></script>
-        <!-- <script src="services/api.service.js"></script> -->
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="modules/app.module.js"></script>
+    <script src="services/callApi.service.js"></script>
 
+    <!-- Header -->
+    <script src="header/header.component.js"></script>
+    <script src="header/header.controller.js"></script>
 
-        <!-- Header -->
-        <script src="header/header.component.js"></script>
-        <script src="header/header.controller.js"></script>
+    <!-- Hero -->
 
-        <!-- Top Artists -->
+    <script src="hero/hero.component.js"></script>
+    <script src="hero/hero.controller.js"></script>
 
-        <script src="topartistas/topartistas.component.js"></script>
-        <script src="topartistas/topartistas.controller.js"></script>
+    <!-- Top Artists -->
 
-        <!-- Top Tracks -->
+    <script src="topartistas/topartistas.component.js"></script>
+    <script src="topartistas/topartistas.controller.js"></script>
 
-        <script src="toptracks/toptracks.component.js"></script>
-        <script src="toptracks/toptracks.controller.js"></script>
+    <!-- Top Tracks -->
 
-        <!-- Footer -->
-        <script src="footer/footer.component.js"></script>
-        <script src="footer/footer.controller.js"></script>
+    <script src="toptracks/toptracks.component.js"></script>
+    <script src="toptracks/toptracks.controller.js"></script>
+
+    <!-- Footer -->
+    <script src="footer/footer.component.js"></script>
+    <script src="footer/footer.controller.js"></script>
   </body>
 </html>
