@@ -11,15 +11,7 @@ function callApi($http){
         'artist.getinfo&artist='
     ];
     
-    vm.getApi = function(metodo, palavra = "", pagina = "", limit = ""){
-    
-        $http.get('http://ws.audioscrobbler.com/2.0/?method='+vm.metodos[metodo]+palavra+'&api_key=b80de9cb1cfe2782055d664a50ab903a&format=json')
-            .then(function(response, status){
-                //console.log(response.data.results.artistmatches.artist);
-                return response.data.results.artistmatches.artist;
-            }, function(err){
-                return err;
-        });
-        
+    vm.getApi = function(valor){
+        return $http.get('http://ws.audioscrobbler.com/2.0/?method='+valor+'&api_key=b80de9cb1cfe2782055d664a50ab903a&format=json');
     }
 }

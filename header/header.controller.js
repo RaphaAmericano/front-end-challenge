@@ -4,6 +4,7 @@ function headerController(callApi){
 
     var vm = this;
     vm.resultado = [];
+    vm.parametro = 'artist.search&artist=';
     vm.teste = [
         "jurandir",
         "Alcir",
@@ -14,14 +15,14 @@ function headerController(callApi){
     }
 
     vm.buscarArtista = function(valor){
-        
-        dados = callApi.getApi(0, valor);
-        console.log("Buscar Artista");
-        
-        vm.resultado = dados;
-        console.log(dados);
-        return vm.resultado;
-        //vm.resultado = vm.resultado.results.artistmatches.artist;
-        //console.log(vm.resultado.data.data.results);
+        vm.parametro += valor;
+        vm.resultado = callApi.getApi(vm.parametro)
+            .then(function(response, status){
+            console.log(response.data);
+            console.log(vm.resultado);
+            vm.resultado = response.data;
+        }, function(err){
+            console.log(err);
+        });
     }
 };
