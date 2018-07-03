@@ -4,23 +4,21 @@ function headerController(callApi){
 
     var vm = this;
     vm.resultado = [];
-    vm.parametro = 'artist.search&artist=';
-    vm.teste = [
-        "jurandir",
-        "Alcir",
-        "Beto"
-    ]
+    
     vm.limparBusca = function(){
         vm.resultado = [];
     }
 
     vm.buscarArtista = function(valor){
+        if(valor == undefined){
+            return;
+        }
+        vm.parametro = 'artist.search&artist=';
         vm.parametro += valor;
-        vm.resultado = callApi.getApi(vm.parametro)
+
+        callApi.getApi(vm.parametro)
             .then(function(response, status){
-            console.log(response.data);
-            console.log(vm.resultado);
-            vm.resultado = response.data;
+            vm.resultado = response.data.results.artistmatches.artist;
         }, function(err){
             console.log(err);
         });

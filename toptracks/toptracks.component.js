@@ -1,5 +1,5 @@
 angular.module('mainApp').component('topTracks', {
-    templateUrl: '',
+    templateUrl: '../toptracks/top_tracks.html',
     controller:'topTracksController',
     controllerAs: 'toptracks'
 });

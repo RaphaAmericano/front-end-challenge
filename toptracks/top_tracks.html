@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4" ng-repeat="musica in topmusicas">
+        <div class="col-md-4" ng-repeat="musica in toptracks.toptracks">
             <img src="{{ musica.image[1]['#text'] }}" alt="">
             <h2>{{ musica.name }}</h2>
             <h3>{{ musica.artist.name }}</h3>
@@ -20,9 +20,9 @@
             </ol>
         </div>
         <div class="col-md-12">
-            <a href="#" ng-click="atualizarTopMusicas(1)">1</a>
-            <a href="#" ng-click="atualizarTopMusicas(2)">2</a>
-            <a href="#" ng-click="atualizarTopMusicas(3)">3<a/>
+            <a ng-click="toptracks.resultado(1)">1</a>
+            <a ng-click="toptracks.resultado(2)">2</a>
+            <a ng-click="toptracks.resultado(3)">3<a/>
         </div>
     </div>
 </div>

@@ -1,10 +1,9 @@
 angular.module('mainApp').service('callApi', ['$http', callApi]);
 
 function callApi($http){
-    console.log("Service Call Api");
+    
     var vm = this;
     vm.metodos= [
-        'artist.search&artist=', 
         'chart.gettopartists&page=1&limit=5',
         'chart.gettoptracks&page=1&limit=3',
         'chart.gettoptracks&page="+pagina+"&limit=3',

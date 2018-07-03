@@ -1,17 +1,16 @@
-angular.module('mainApp').controller('topArtistasController', topArtistasController);
+angular.module('mainApp').controller('topArtistasController',['callApi', topArtistasController]);
 
-function topArtistasController(){
+function topArtistasController(callApi){
     var vm = this;
-
+    vm.parametro = 'chart.gettopartists&page=1&limit=5';
     vm.topbandas = [];
-
-    vm.chamarFuncao = function(){
-
-        vm.topbandas = data.data.artists.artist;
-        // $http.get(apiUrl+"?method=chart.gettopartists&page=1&limit=5"+apiKey).then(function(data, status){
-        //     vm.topbandas = data.data.artists.artist;
-        // });
+    vm.resultado = function(){
+        callApi.getApi(vm.parametro)
+        .then(function(response, status){
+            vm.topbandas = response.data.artists.artist;
+        }, function(err){
+            console.log(err);
+        });
     }
-    
-
+    vm.resultado();
 }
