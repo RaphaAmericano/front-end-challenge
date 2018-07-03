@@ -3,7 +3,8 @@ angular.module("mainApp").config(['$routeProvider', function($routeProvider){
     .when('/', {
         templateUrl: '../views/main.html'
     })
-    .when('/artista', {
-        templateUrl: '../views/artista.html'
+    .when('/artista/', {
+        templateUrl: '../views/artista_view.html'
     })
+    .otherwise({redirectTo: '/'});
 }]);
