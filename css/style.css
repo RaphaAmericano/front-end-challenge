@@ -56,11 +56,19 @@ header .navbar-right .input-group-addon {
   font-size: 16px; }
 
 .section_1 {
-  max-height: 692px;
-  background-image: url(../img/bg_hero.jpg); }
+  background-color: #2f2f2f; }
+  .section_1.home_hero {
+    max-height: 692px;
+    background-image: url(../img/bg_hero.jpg); }
+    .section_1.home_hero .jumbotron {
+      margin: 210px 0; }
+  .section_1.hero_artista .img-responsive {
+    display: inline-block;
+    border-radius: 170px;
+    border: 2px solid #d51007;
+    padding: 20px; }
   .section_1 .jumbotron {
     color: #FFF;
-    margin: 210px 0;
     background: transparent; }
 
 .section_2 .col-md-6, .section_2 .col-md-4 {

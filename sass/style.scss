@@ -53,11 +53,25 @@ header {
 
 .section_1 {
     @extend %background_image_cover;
-    max-height: 692px;
-    background-image: url(../img/bg_hero.jpg);
+    
+    background-color: $cinza;
+    &.home_hero{
+        max-height: 692px;
+        background-image: url(../img/bg_hero.jpg);
+        .jumbotron {
+            margin: 210px 0;
+        }
+    }
+    &.hero_artista {
+        .img-responsive {
+            display: inline-block;
+            border-radius: 170px;
+            border: 2px solid $vermelho;
+            padding: 20px;
+        }
+    }
     .jumbotron {
         color: $branco;
-        margin: 210px 0;
         background: transparent;
     }
 }

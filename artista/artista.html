@@ -1,1 +1,42 @@
-<h1>{{ artista.artista }}</h1>
+<div class="container-fluid section_1 hero_artista">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="{{artista.artista.artist.image[4]['#text']}}" alt="" class="img-responsive">
+        </div>
+        <div class="col-md-12">
+                <div class="jumbotron text-center">
+                    <h1 class="text-uppercase">{{ artista.artista.artist.name }}</h1>
+                    <p>{{ artista.artista.artist.bio.content }}</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="conteiner-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Faixas Printicipais</h4>
+            <ul class="list-group" >
+                <li class="list-group-item" ng-repeat="faixa in artista.musicas">{{ faixa }}</li>
+                <!-- <li>{{ artista.musicas.toptracks }}</li> -->
+                <!-- <li class="list-group-item" ng-repeat="track in artista.musicas | limitTo: 10">{{ track.toptracks.track.name }}</li> -->
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Albuns</h4>
+            <div class="row">
+                <div class="col-md-12"></div>
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Artistas Parecidos</h4>
+        </div>
+    </div>
+</div>
