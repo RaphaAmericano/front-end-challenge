@@ -9,3 +9,10 @@ angular.module("mainApp").config(['$routeProvider','$locationProvider', function
     .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
 }]);
+
+angular.module("mainApp").filter('virgulaPonto', [function(){
+    return function(input){
+        var retorno = (input)?input.toString().trim().replace(',','.'):null;
+        return parseFloat(retorno);
+    }
+}]);

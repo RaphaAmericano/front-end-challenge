@@ -8,10 +8,12 @@ function artistaController($routeParams, callApi){
     vm.parametro = 'artist.getinfo&artist='+stringArtista;
     vm.parametroMusicas = 'artist.gettoptracks&artist='+stringArtista;
     vm.parametroAlbums = 'artist.gettopalbums&artist='+stringArtista;
+    vm.parametroParecidos = 'artist.getsimilar&artist='+stringArtista;
     vm.service = callApi;
     vm.artista = [];
     vm.musicas = [];
     vm.albums = [];
+    vm.parecidos = [];
 
     vm.dados = function(){
         callApi.getApi(vm.parametro).then(function(response){
@@ -25,8 +27,8 @@ function artistaController($routeParams, callApi){
 
     vm.topTracks = function(){
         callApi.getApi(vm.parametroMusicas).then(function(response){
-            vm.musicas = response.data;
-            console.log(vm.musicas);
+            vm.musicas = response.data.toptracks.track;
+            //console.log(vm.musicas);
         }, function(err){
             console.log(err);
         })
@@ -35,11 +37,21 @@ function artistaController($routeParams, callApi){
 
     vm.topAlbums = function(){
         callApi.getApi(vm.parametroAlbums).then(function(response){
-            vm.albums = response.data;
-            console.log(vm.musicas);
+            vm.albums = response.data.topalbums.album;
+            console.log(vm.albums);
         }, function(err){
             console.log(err);
         })
     }
     vm.topAlbums();
+
+    vm.getSimilar = function(){
+        callApi.getApi(vm.parametroParecidos).then(function(response){
+            vm.parecidos = response.data.similarartists.artist;
+            //console.log(vm.parecidos);
+        }, function(err){
+            console.log(err);
+        })
+    }
+    vm.getSimilar();
 }

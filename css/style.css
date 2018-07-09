@@ -4,6 +4,11 @@
   background-repeat: no-repeat;
   background-size: cover; }
 
+.artista_info .albuns .panel {
+  border: none;
+  background-color: transparent;
+  border-color: transparent; }
+
 * {
   font-family: "Fira Sans", sans-serif; }
 
@@ -92,3 +97,32 @@ header .navbar-right .input-group-addon {
     font-weight: 500; }
   .section_2 .panel h3 {
     font-weight: 300; }
+
+.artista_info .faixas .list-group .list-group-item {
+  border: none; }
+
+.artista_info .albuns .panel {
+  margin-bottom: 0;
+  border-radius: 0;
+  padding: 0;
+  height: 175px;
+  position: relative; }
+  .artista_info .albuns .panel:first-child {
+    height: 350px; }
+  .artista_info .albuns .panel .panel-body {
+    position: absolute;
+    bottom: 0; }
+    .artista_info .albuns .panel .panel-body h2, .artista_info .albuns .panel .panel-body h3 {
+      color: #FFF; }
+  .artista_info .albuns .panel .overlay-filtro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, #2f2f2f); }
+
+footer .navbar-default {
+  background-color: transparent;
+  border-color: transparent; }
+  footer .navbar-default > .container-fluid {
+    padding-left: 0;
+    padding-right: 0; }
