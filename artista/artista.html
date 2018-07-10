@@ -35,13 +35,13 @@
                     'background-repeat': 'no-repeat',
                     'background-size': 'cover' }"
                     class="panel panel-default">
-                    
-                    <div class="panel-body">
-                        <h2>{{ disco.name }}</h2>
-                        <h3>{{ disco.playcount | number }}</h3>
-                        
-                    </div>
                     <div class="overlay-filtro"></div>
+                        <div class="panel-body">
+                            <h3>{{ disco.name }}</h3>
+                            <h4 class="text-uppercase">{{ disco.playcount | number }} Ouvintes</h4>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,15 +56,17 @@
         
     </div>
     <div class="row">
-        <div 
+        <a 
             ng-repeat="similares in artista.parecidos | limitTo: 8" 
             ng-style="{
                 'background-image': 'url('+ similares.image[2]['#text'] +')',
                 'background-position': 'center center',
                 'backgroun-repeat': no-repeat, 
                 'background-size': 'cover'}"
-            class="col-md-1">
-            <h3>{{ similares.name }}</h3>
-        </div>
+            class="col-md-1 artista_similares_box"
+            href="artista/{{ similares.name}}">
+            <h4>{{ similares.name }}</h4>
+        </a>
+        
     </div>
 </div>

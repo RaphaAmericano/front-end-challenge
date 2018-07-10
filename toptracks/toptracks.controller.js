@@ -3,8 +3,12 @@ angular.module('mainApp').controller('topTracksController', ['callApi',topTracks
 function topTracksController(callApi){
     var vm = this;
     
+    vm.active ='active';
+
+
     vm.toptracks = [];
-    vm.resultado = function(valor = 1){
+    vm.resultado = function(valor = 1){ 
+        
         if(vm.toptracks.lenght > 0){ 
             vm.toptracks = []; 
         };
@@ -18,5 +22,11 @@ function topTracksController(callApi){
             console.log(err);
         });
     }
+
+    vm.selecionado = function(valor){
+        console.log(valor);
+    }
     vm.resultado();
+
+
 };

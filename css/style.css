@@ -98,8 +98,27 @@ header .navbar-right .input-group-addon {
   .section_2 .panel h3 {
     font-weight: 300; }
 
+.section_3 {
+  background-color: #000;
+  color: #FFF;
+  padding-bottom: 50px; }
+  .section_3 .thumb_toptracks img {
+    border-radius: 32px; }
+  .section_3 .thumb_toptracks .media {
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    box-sizing: border-box; }
+  .section_3 .section_title {
+    color: #FFF; }
+  .section_3 .carousel-indicators {
+    top: 20px;
+    bottom: 0; }
+
 .artista_info .faixas .list-group .list-group-item {
-  border: none; }
+  border: none;
+  padding: 10px 0; }
 
 .artista_info .albuns .panel {
   margin-bottom: 0;
@@ -112,13 +131,30 @@ header .navbar-right .input-group-addon {
   .artista_info .albuns .panel .panel-body {
     position: absolute;
     bottom: 0; }
-    .artista_info .albuns .panel .panel-body h2, .artista_info .albuns .panel .panel-body h3 {
+    .artista_info .albuns .panel .panel-body h3, .artista_info .albuns .panel .panel-body h4 {
       color: #FFF; }
+    .artista_info .albuns .panel .panel-body h3 {
+      font-size: 19.2px; }
+    .artista_info .albuns .panel .panel-body h4 {
+      font-size: 12.8px; }
   .artista_info .albuns .panel .overlay-filtro {
     position: absolute;
     width: 100%;
     height: 100%;
     background: linear-gradient(transparent, #2f2f2f); }
+
+.artistas_parecidos .row:nth-child(2) {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.artistas_parecidos .artista_similares_box {
+  position: relative;
+  width: 12.5%;
+  height: 34%; }
+  .artistas_parecidos .artista_similares_box h4 {
+    color: #FFF;
+    position: absolute;
+    bottom: 0; }
 
 footer .navbar-default {
   background-color: transparent;

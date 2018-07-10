@@ -105,11 +105,37 @@ header {
     }
 }
 
+.section_3 {
+    background-color: $preto;
+    color: $branco;
+    padding-bottom: 50px;
+    .thumb_toptracks {
+        img {
+            border-radius: 32px;
+        }
+        .media{
+            border-top: 1px solid $branco;
+            border-bottom: 1px solid $branco;
+            padding-top: 10px;
+            padding-bottom: 4px;
+            box-sizing: border-box;
+        }
+    }
+    .section_title{
+        color: $branco;
+    }
+    .carousel-indicators {
+        top: 20px;
+        bottom: 0;
+    }
+}
+
 .artista_info {
     .faixas{
         .list-group {
             .list-group-item {
                 border: none;
+                padding: 10px 0;
             }
         }
     }
@@ -129,11 +155,16 @@ header {
             .panel-body {
                 position: absolute;
                 bottom: 0;
-                h2, h3 {
+                h3, h4 {
                     color: $branco;
                     
                 }
-                
+                h3 {
+                    font-size: $tamanho_max * 0.3;
+                }
+                h4 {
+                    font-size: $tamanho_max * 0.2;
+                }
             }
             .overlay-filtro {
                 position: absolute;
@@ -142,6 +173,25 @@ header {
                 background: $grandiente_capas;
             }
             
+        }
+    }
+}
+
+.artistas_parecidos {
+    .row{
+        &:nth-child(2){
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    .artista_similares_box {
+        position: relative;
+        width: 12.5%;
+        height: 34%;
+        h4 {
+            color: $branco;
+            position: absolute;
+            bottom: 0;
         }
     }
 }

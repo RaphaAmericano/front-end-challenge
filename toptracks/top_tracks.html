@@ -1,28 +1,31 @@
-<div class="container-fluid">
+<div class="container-fluid section_3">
     <div class="row">
         <div class="col-md-12">
                 <h2 class="text-uppercase text-center section_title"><span>Musicas</span> mais Escutadas</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4" ng-repeat="musica in toptracks.toptracks">
-            <img src="{{ musica.image[1]['#text'] }}" alt="">
-            <h2>{{ musica.name }}</h2>
-            <h3>{{ musica.artist.name }}</h3>
+        <div class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.toptracks">
+            <div class="media">
+                <div class="media-left">
+                    <a href="artista/{{musica.name }}">
+                        <img src="{{ musica.image[1]['#text'] }}" alt="">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{ musica.name }}</h4>
+                    <h3>{{ musica.artist.name }}</h3>
+                </div>
+            </div>          
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li class="active"><a ng-click="toptracks.selecionado()"></a></li>
+                <li><a ng-model="" ng-click=""></a></li>
+                <li><a ng-click="resultado(3)"><a/></li>
             </ol>
-        </div>
-        <div class="col-md-12">
-            <a ng-click="toptracks.resultado(1)">1</a>
-            <a ng-click="toptracks.resultado(2)">2</a>
-            <a ng-click="toptracks.resultado(3)">3<a/>
         </div>
     </div>
 </div>
