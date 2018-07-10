@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.toptracks">
+        <div ng-model="range = 3" class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.toptracks | limitTo: range | limitTo: -3">
             <div class="media">
                 <div class="media-left">
                     <a href="artista/{{musica.name }}">
@@ -21,11 +21,12 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <ol class="carousel-indicators">
-                <li class="active"><a ng-click="toptracks.selecionado()"></a></li>
-                <li><a ng-model="" ng-click=""></a></li>
-                <li><a ng-click="resultado(3)"><a/></li>
-            </ol>
+            <div class="carousel-indicators" ng-model="indicator = 1">
+                <a ng-class="indicator = 1 ? 'active' : ''" ng-click="range = 3; indicator = 1"></a>
+                <a ng-class="indicator = 2 ? 'active' : ''" ng-click="range = 6; indicator = 2"></a>
+                <a ng-class="indicator = 3 ? 'active' : ''" ng-click="range = 9; indicator = 3"><a/>
+            </div>
         </div>
+        {{ indicator }}
     </div>
 </div>

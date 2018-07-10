@@ -115,6 +115,18 @@ header .navbar-right .input-group-addon {
   .section_3 .carousel-indicators {
     top: 20px;
     bottom: 0; }
+    .section_3 .carousel-indicators a {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 1px;
+      text-indent: -999px;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid #fff;
+      border-radius: 10px; }
+      .section_3 .carousel-indicators a.active {
+        background-color: #FFF; }
 
 .artista_info .faixas .list-group .list-group-item {
   border: none;
