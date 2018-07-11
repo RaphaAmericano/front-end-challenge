@@ -5,11 +5,11 @@
         </div>
     </div>
     <div class="row">
-        <div ng-model="range = 3" class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.toptracks | limitTo: range | limitTo: -3">
+        <div class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.tracks | trackRange: toptracks.dot ">
             <div class="media">
                 <div class="media-left">
                     <a href="artista/{{musica.name }}">
-                        <img src="{{ musica.image[1]['#text'] }}" alt="">
+                        <img ng-src="{{ musica.image[1]['#text'] }}" alt="">
                     </a>
                 </div>
                 <div class="media-body">
@@ -21,12 +21,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="carousel-indicators" ng-model="indicator = 1">
-                <a ng-class="indicator = 1 ? 'active' : ''" ng-click="range = 3; indicator = 1"></a>
-                <a ng-class="indicator = 2 ? 'active' : ''" ng-click="range = 6; indicator = 2"></a>
-                <a ng-class="indicator = 3 ? 'active' : ''" ng-click="range = 9; indicator = 3"><a/>
+            <div class="carousel-indicators">
+                <a class="{{ toptracks.dot == 0 ? 'active' : '' }}" ng-click="toptracks.carrosselDot(0)"></a>
+                <a class="{{ toptracks.dot == 1 ? 'active' : '' }}" ng-click="toptracks.carrosselDot(1)"></a>
+                <a class="{{ toptracks.dot == 2 ? 'active' : '' }}" ng-click="toptracks.carrosselDot(2)"></a>
             </div>
         </div>
-        {{ indicator }}
     </div>
 </div>

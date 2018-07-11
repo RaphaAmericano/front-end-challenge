@@ -20,7 +20,7 @@
             <li class="media" ng-repeat="artista in header.resultado | limitTo: 5 ">
                 <div class="media-left">
                     <a href="{{ artista.url }}">
-                    <img class="media-object" src="{{ artista.image[0]['#text']}}" alt="...">
+                    <img ng-src="{{artista.image[0]['#text']}}" class="media-object" alt="...">
                     </a>
                 </div>
                 <div class="media-body">

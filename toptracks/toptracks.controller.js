@@ -3,31 +3,26 @@ angular.module('mainApp').controller('topTracksController', ['callApi',topTracks
 function topTracksController(callApi){
     var vm = this;
     
-    vm.active ='active';
-    vm.range = 3;
-
-    vm.toptracks = [];
-    vm.resultado = function(valor = 1){ 
+    vm.dot = 0;
+    vm.tracks = [];
+    vm.resultado = function(valor = 3){ 
         
-        // if(vm.toptracks.lenght > 0){ 
-            //vm.toptracks = []; 
-        // };
-        var parametro =  'chart.gettoptracks&page='+valor+'&limit=9';
+        var parametro =  'chart.gettoptracks&page='+valor+'&limit=3';
 
         callApi.getApi(parametro)
-        .then(function(response, status){
-            
-            vm.toptracks = response.data.tracks.track;
-            console.log(vm.toptracks.track);
+        .then(function(response, status){  
+            vm.tracks = response.data.tracks.track;
         }, function(err){
             console.log(err);
         });
     }
 
     vm.selecionado = function(valor){
-        vm.range = valor * 3;
+        vm.range = vm.dot * 3;
     }
     vm.resultado();
 
-
+    vm.carrosselDot = function(valor){
+        vm.dot = valor;
+    };
 };
