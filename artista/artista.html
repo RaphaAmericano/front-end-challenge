@@ -16,12 +16,20 @@
     <div class="row">
         <div class="col-md-6 faixas">
             <h4>Faixas Principais</h4>
-            <ul class="list-group" >
-                <!-- <div>{{ artista.musicas }}</div> -->
-                <li class="list-group-item" ng-repeat="faixa in artista.musicas | limitTo: 10"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>{{ faixa.name }}</li>
-                <!-- <li>{{ artista.musicas.toptracks }}</li> -->
-                <!-- <li class="list-group-item" ng-repeat="track in artista.musicas | limitTo: 10">{{ track.toptracks.track.name }}</li> -->
-            </ul>
+            <!--  -->
+            <div class="panel panel-default">
+                <table class="table">
+                    <tbody>
+                        <tr ng-repeat="faixa in artista.musicas | limitTo: 10">
+                            <th>{{ $index + 1 }}</th>
+                            <td><span class="glyphicon glyphicon-play-circle" aria-hidden="true" ng-show="artista.trackPlaying === artista.$index "></span><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></td>
+                            <!-- ng-show="{ artista.trackPlaying == $index }" -->
+                            <td><a ng-click="artista.playTrack($index)" >{{ faixa.name }}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+  
         </div>
         <div class="col-md-6 albuns">
             <h4>Albuns</h4>
@@ -39,7 +47,6 @@
                         <div class="panel-body">
                             <h3>{{ disco.name }}</h3>
                             <h4 class="text-uppercase">{{ disco.playcount | number | virgulaPonto}} Ouvintes</h4>
-                            
                         </div>
                     </div>
                 </div>

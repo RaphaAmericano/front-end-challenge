@@ -15,7 +15,7 @@
                         'background-size': 'cover'}">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h2>{{ artista.name }}</h2>
+                    <h2><a href="artista/{{ artista.name }}">{{ artista.name }}</a></h2>
                     <h3>{{ artista.listeners | number | virgulaPonto }} ouvintes</h3>
                 </div>
             </div>  

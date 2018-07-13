@@ -5,6 +5,13 @@
 
 * {
     font-family: $fira_sans;
+    a{
+        color:inherit;
+        &:hover{
+            color:inherit;
+            text-decoration: none;
+        }
+    }
 }
 .section_title{
         color: $cinza;

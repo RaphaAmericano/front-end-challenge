@@ -19,7 +19,7 @@ function headerController(callApi){
         callApi.getApi(vm.parametro)
             .then(function(response, status){
             vm.resultado = response.data.results.artistmatches.artist;
-            console.log(vm.resultado);
+            //console.log(vm.resultado);
         }, function(err){
             console.log(err);
         });

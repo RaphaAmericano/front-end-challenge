@@ -14,11 +14,12 @@ function artistaController($routeParams, callApi){
     vm.musicas = [];
     vm.albums = [];
     vm.parecidos = [];
+    vm.trackPlaying = null;
 
     vm.dados = function(){
         callApi.getApi(vm.parametro).then(function(response){
             vm.artista = response.data;
-            console.log(vm.artista);
+            //console.log(vm.artista);
         }, function(err){
             console.log(err);
         })
@@ -38,7 +39,6 @@ function artistaController($routeParams, callApi){
     vm.topAlbums = function(){
         callApi.getApi(vm.parametroAlbums).then(function(response){
             vm.albums = response.data.topalbums.album;
-            console.log(vm.albums);
         }, function(err){
             console.log(err);
         })
@@ -54,4 +54,9 @@ function artistaController($routeParams, callApi){
         })
     }
     vm.getSimilar();
+
+    vm.playTrack = function(number){
+        // vm.trackPlaying = number;
+        console.log(number);
+    }
 }
