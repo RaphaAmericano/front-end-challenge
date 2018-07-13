@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.tracks | trackRange: toptracks.dot ">
+        <div class="col-md-4 thumb_toptracks" ng-repeat="musica in toptracks.tracks | limitTo: toptracks.limit | limitTo: 3 ">
             <div class="media">
                 <div class="media-left">
                     <a href="artista/{{musica.name }}">

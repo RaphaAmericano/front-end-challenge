@@ -1,6 +1,6 @@
-<div class="container-fluid" >
+<div class="container-fluid">
     <!-- ng-mouseleave="header.limparBusca()" -->
-    <header>
+    <header >
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="media-body">
                     <!-- ng-click="abrirPagina(artista.name)" -->
-                    <a href="artista/{{ artista.name }}"><h4 class="media-heading">{{ artista.name }}</h4></a>
+                    <a href="artista/{{ artista.name }}" ng-click="header.limparBusca()"><h4 class="media-heading">{{ artista.name }}</h4></a>
                     <p></p>
                 </div>
             </li>
