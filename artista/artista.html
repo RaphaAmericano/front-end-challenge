@@ -22,9 +22,10 @@
                     <tbody>
                         <tr ng-repeat="faixa in artista.musicas | limitTo: 10">
                             <th>{{ $index + 1 }}</th>
-                            <td><span class="glyphicon glyphicon-play-circle" aria-hidden="true" ng-show="artista.trackPlaying === artista.$index "></span><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></td>
+                            <td><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></td>
+                            <td><span class="glyphicon glyphicon-play-circle" aria-hidden="true" ng-show="artista.trackPlaying == $index "></span></td>
                             <!-- ng-show="{ artista.trackPlaying == $index }" -->
-                            <td><a ng-click="artista.playTrack($index)" >{{ faixa.name }}</a></td>
+                            <td><a data-att="{{$index+1}}" ng-click="artista.playTrack($index)" >{{ faixa.name }}</a></td>
                         </tr>
                     </tbody>
                 </table>

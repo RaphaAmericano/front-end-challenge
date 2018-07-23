@@ -56,7 +56,6 @@ function artistaController($routeParams, callApi){
     vm.getSimilar();
 
     vm.playTrack = function(number){
-        // vm.trackPlaying = number;
-        console.log(number);
+        vm.trackPlaying = number;
     }
 }

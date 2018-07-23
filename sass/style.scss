@@ -35,6 +35,14 @@ header {
     border-color: transparent;
     margin-bottom: 0;
    }
+   .menu-principal {
+       position: absolute;
+       background: $branco;
+       width: 100%;
+       margin-left:0;
+       left: 0;
+       z-index: 500;
+   }
    .navbar-right{
         form{
             input.form-control{
@@ -159,10 +167,16 @@ header {
                 padding: 10px 0;
             }
         }
+        .panel, .panel-default {
+            border-color: transparent;
+        }
+        tr {
+            th,td {
+                border-top: transparent;
+            }
+        }
     }
-
-    .albuns {
-        
+    .albuns {   
         .panel {
             @extend %panel_transparent;
             margin-bottom: 0;
@@ -216,6 +230,8 @@ header {
         }
     }
 }
+
+
 
 footer {
     .navbar-default {

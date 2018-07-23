@@ -32,6 +32,14 @@ header .navbar-default {
   border-color: transparent;
   margin-bottom: 0; }
 
+header .menu-principal {
+  position: absolute;
+  background: #FFF;
+  width: 100%;
+  margin-left: 0;
+  left: 0;
+  z-index: 500; }
+
 header .navbar-right form input.form-control {
   border-top: 2px solid #d51007;
   border-right: 2px solid #d51007;
@@ -136,6 +144,12 @@ header .navbar-right .input-group-addon {
 .artista_info .faixas .list-group .list-group-item {
   border: none;
   padding: 10px 0; }
+
+.artista_info .faixas .panel, .artista_info .faixas .panel-default {
+  border-color: transparent; }
+
+.artista_info .faixas tr th, .artista_info .faixas tr td {
+  border-top: transparent; }
 
 .artista_info .albuns .panel {
   margin-bottom: 0;
